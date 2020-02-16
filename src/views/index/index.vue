@@ -6,7 +6,10 @@
 
 <script>
     export default {
-        name: "index"
+        name: "index",
+        mounted() {
+           console.log(111,$(".com-item"))
+        },
     }
 </script>
 

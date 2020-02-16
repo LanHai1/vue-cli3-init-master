@@ -1,4 +1,5 @@
 const path = require('path');
+const webpack = require('webpack');
 function resolve (dir) {
   return path.join(__dirname, './', dir)
 }
@@ -18,6 +19,15 @@ module.exports = {
         changeOrigin: true
       }
     }
+  },
+  configureWebpack: {
+    plugins: [
+      new webpack.ProvidePlugin({
+        $: "jquery",
+        jQuery: "jquery",
+        "windows.jQuery": "jquery"
+      })
+    ]
   },
   // 配置别名
   chainWebpack: (config)=>{
