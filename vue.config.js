@@ -1,6 +1,7 @@
 const path = require('path');
 const webpack = require('webpack');
-function resolve (dir) {
+
+function resolve(dir) {
   return path.join(__dirname, './', dir)
 }
 
@@ -14,9 +15,14 @@ module.exports = {
     https: false,
     hotOnly: false,
     proxy: {
-      '/api': {
-        target: 'http://127.0.0.1:8080',
-        changeOrigin: true
+      '/brah_553': {
+        target: 'http://192.168.2.230', // 接口域名
+        secure: false, // 如果是https接口，需要配置这个参数
+        changeOrigin: true, //是否跨域
+        ws: true,
+        pathRewrite: {
+          '^/': '/' //需要rewrite的,
+        }
       }
     }
   },
@@ -26,20 +32,20 @@ module.exports = {
         $: "jquery",
         jQuery: "jquery",
         "windows.jQuery": "jquery"
-      })
+      }), new webpack.HotModuleReplacementPlugin()
     ]
   },
   // 配置别名
-  chainWebpack: (config)=>{
+  chainWebpack: (config) => {
     config.resolve.alias
-        .set('@', resolve('src'))
-        .set('assets',resolve('src/assets'))
-        .set('components',resolve('src/components'))
-        .set('router',resolve('src/router'))
-        .set('utils',resolve('src/utils'))
-        .set('static',resolve('src/static'))
-        .set('store',resolve('src/store'))
-        .set('views',resolve('src/views'))
+      .set('@', resolve('src'))
+      .set('assets', resolve('src/assets'))
+      .set('components', resolve('src/components'))
+      .set('router', resolve('src/router'))
+      .set('utils', resolve('src/utils'))
+      .set('static', resolve('src/static'))
+      .set('store', resolve('src/store'))
+      .set('views', resolve('src/views'))
   },
   css: {
     loaderOptions: {
