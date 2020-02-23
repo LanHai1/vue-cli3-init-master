@@ -1,23 +1,56 @@
-html,body, ul, ol, dl, dd, h1, h2, h3, h4, h5, h6, pre, form, fieldset, legend, input, button, textarea, p, blockquote, table, th, td, menu {
+html,
+body,
+ul,
+ol,
+dl,
+dd,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+pre,
+form,
+fieldset,
+legend,
+input,
+button,
+textarea,
+p,
+blockquote,
+table,
+th,
+td,
+menu {
   margin: 0;
   padding: 0;
 }
 
 html {
-  font-family: Arial, "Microsoft YaHei",'微软雅黑','Avenir', Helvetica, sans-serif;
+  font-family: Arial, "Microsoft YaHei", '微软雅黑', 'Avenir', Helvetica, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   overflow: -moz-hidden-unscrollable;
 }
-ul, ol, menu {
+
+ul,
+ol,
+menu {
   list-style: none
 }
 
-fieldset, img {
+fieldset,
+img {
   border: none
 }
 
-img, object, select, input, textarea, button {
+img,
+object,
+select,
+input,
+textarea,
+button {
   vertical-align: middle
 }
 
@@ -41,4 +74,35 @@ a:active {
 
 i {
   font-style: normal;
+}
+
+// 版心
+.area {
+  width: 1190px;
+  margin: 0 auto;
+}
+
+// 清除浮动
+.clearfix {
+  zoom: 1;
+
+  &::after {
+    clear: both;
+    content: '.';
+    display: block;
+    width: 0;
+    height: 0;
+    visibility: hidden;
+  }
+}
+
+
+
+#app {
+  position: fixed;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  overflow-y: scroll;
 }

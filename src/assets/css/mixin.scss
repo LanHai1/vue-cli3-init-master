@@ -8,6 +8,7 @@
   align-items: $alignItems;
   justify-content: $justifyContent;
 }
+
 /* ellipsis
  * @include ellipsis;
  */
@@ -15,4 +16,26 @@
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
+}
+
+// 全屏
+@mixin full_screen {
+  position: fixed;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+}
+
+// 字体
+@mixin font_normal {
+  font-weight: normal;
+}
+
+// 垂直居中
+@mixin vertical_center($left, $top) {
+  position: absolute;
+  left: $left;
+  top: $top;
+  transform: translate(-50%, -50%);
 }
