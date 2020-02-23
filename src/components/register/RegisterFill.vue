@@ -40,9 +40,20 @@
           placeholder="确认密码"
         ></el-input>
       </el-form-item>
-      <el-form-item>
-        <el-button type="primary" @click="submitForm('ruleForm')">注册</el-button>
-        <el-button @click="resetForm('ruleForm')">返回</el-button>
+      <el-row class="chk_inner">
+        <el-col :span="24">
+            <el-checkbox v-model="checked">我已阅读并接受以下条款：</el-checkbox>
+        </el-col>
+      </el-row>
+      <el-row >
+        <el-col :span="24" class="contract">
+          <el-link>《银狐商业产品注册协议》</el-link>
+          <el-link>《银狐推广服务合同》</el-link>
+        </el-col>
+      </el-row>
+      <el-form-item class="register_foot">
+        <el-button type="primary" class="login_btn" @click="submitForm('ruleForm')">注册</el-button>
+        <el-button class="register_btn" style="margin-left:24px;" @click="goback">返回</el-button>
       </el-form-item>
     </el-form>
   </div>
@@ -90,6 +101,7 @@ export default {
       }
     };
     return {
+      checked: true,
       ruleForm: {
         username: "",
         name: "",
@@ -117,8 +129,8 @@ export default {
         }
       });
     },
-    resetForm(formName) {
-      this.$refs[formName].resetFields();
+    goback() {
+      this.$router.go(-1);
     }
   }
 };

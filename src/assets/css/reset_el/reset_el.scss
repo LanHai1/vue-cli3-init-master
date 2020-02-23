@@ -141,6 +141,14 @@
             color: rgba(1, 7, 20, 1);
         }
 
+        .register_foot {
+            .el-form-item__content {
+                margin-left: 0 !important;
+                margin-top: 17px;
+            }
+        }
+
+
         .el-input__inner {
             width: 280px;
             height: 36px;
@@ -169,6 +177,37 @@
         .el-form-item.is-required:not(.is-no-asterisk)>.el-form-item__label:before {
             content: "";
             display: none;
+        }
+
+        .chk_inner {
+            margin: 0;
+
+            .el-checkbox__input.is-checked .el-checkbox__inner {
+                background-color: #FE9818;
+                border-color: #FE9818;
+            }
+
+            .el-checkbox__input.is-focus .el-checkbox__inner {
+                border-color: #FE9818;
+            }
+
+            .el-checkbox__label,
+            .el-link--inner {
+                font-weight: normal;
+                color: rgba(199, 202, 207, 1);
+            }
+        }
+
+        .contract {
+            .el-link--inner {
+                font-size: 14px;
+                font-weight: normal;
+                color: rgba(254, 152, 24, 1);
+            }
+
+            .el-link.is-underline:hover:after {
+                border-color: rgba(254, 152, 24, 1);
+            }
         }
     }
 }

@@ -45,14 +45,10 @@
           </div>
           <el-row class="chk_inner">
             <el-col :span="12">
-              <div class="grid-content bg-purple">
                 <el-checkbox v-model="checked">记住密码</el-checkbox>
-              </div>
             </el-col>
             <el-col :span="12">
-              <div class="grid-content bg-purple-light">
                 <el-link :underline="false">忘记密码?</el-link>
-              </div>
             </el-col>
           </el-row>
           <el-form-item>

@@ -8,7 +8,7 @@ export const router = new Router({
         path: '/',
         name: 'index',
         component: () => import('@/views/index'),
-        redirect: "/userAction/register"
+        redirect: "/userAction/login"
     }, {
         path: '/userAction',
         name: 'userAction',
