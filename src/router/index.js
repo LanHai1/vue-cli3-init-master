@@ -8,10 +8,21 @@ export const router = new Router({
         path: '/',
         name: 'index',
         component: () => import('@/views/index'),
-        redirect: "/login"
+        redirect: "/userAction/login"
     }, {
-        path: '/login',
-        name: 'login',
-        component: () => import('@/views/userAction/Login.vue')
+        path: '/userAction',
+        name: 'userAction',
+        component: () => import('@/views/userAction/Login.vue'),
+        children: [{
+            path: 'login',
+            components: {
+                login_view: () => import('@/components/login/LoginFill')
+            }
+        }, {
+            path: 'register',
+            components: {
+                login_view: () => import('@/components/register/RegisterFill')
+            }
+        }]
     }]
 })

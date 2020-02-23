@@ -6,8 +6,7 @@
         <li></li>
         <li></li>
       </ul>
-      <!-- <router-view name="login_view" class="login_fill_box"/> -->
-      <LoginFill class="login_fill_box"></LoginFill>
+      <router-view name="login_view" class="login_fill_box"/>
     </div>
     <div class="curr_right">
       <img src="../../assets/img/login/login_img@2x.png" width="497px" alt />
@@ -16,14 +15,12 @@
 </template>
 
 <script>
-import LoginFill from "@/components/login/LoginFill";
 export default {
   name: "login",
   data() {
     return {};
   },
   components: {
-    LoginFill
   }
 };
 </script>

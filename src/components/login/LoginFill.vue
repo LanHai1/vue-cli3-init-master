@@ -62,7 +62,7 @@
             <el-button type="primary" class="login_btn" @click="submitForm('numberValidateForm')">登陆</el-button>
             <el-button
               class="register_btn"
-              @click="resetForm('numberValidateForm')"
+              @click="registerForm"
               style="margin-left:24px;"
             >注册</el-button>
           </el-form-item>
@@ -114,8 +114,8 @@ export default {
         }
       });
     },
-    resetForm(formName) {
-      this.$refs[formName].resetFields();
+    registerForm() {
+      this.$router.push('register')
     }
   }
 };
