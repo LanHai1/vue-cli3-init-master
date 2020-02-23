@@ -15,15 +15,13 @@
           <div class="login_wrap">
             <el-form-item
               label="用户名"
-              prop="age"
+              prop="username"
               :rules="[
-      { required: true, message: '年龄不能为空'},
-      { type: 'number', message: '年龄必须为数字值'}
+      { required: true, message: '用户名不能为空'}
     ]"
             >
               <el-input
-                type="age"
-                v-model.number="numberValidateForm.age"
+                v-model.trim="numberValidateForm.username"
                 suffix-icon="el-icon-user"
                 autocomplete="off"
                 placeholder="请输入您的用户名"
@@ -31,15 +29,14 @@
             </el-form-item>
             <el-form-item
               label="密码"
-              prop="age"
+              prop="password"
               :rules="[
-      { required: true, message: '年龄不能为空'},
-      { type: 'number', message: '年龄必须为数字值'}
+      { required: true, message: '密码不能为空'},
     ]"
             >
               <el-input
-                type="age"
-                v-model.number="numberValidateForm.age1"
+                show-password
+                v-model.trim="numberValidateForm.password"
                 suffix-icon="el-icon-lock"
                 autocomplete="off"
                 placeholder="请输入您的密码"
@@ -60,16 +57,12 @@
           </el-row>
           <el-form-item>
             <el-button type="primary" class="login_btn" @click="submitForm('numberValidateForm')">登陆</el-button>
-            <el-button
-              class="register_btn"
-              @click="registerForm"
-              style="margin-left:24px;"
-            >注册</el-button>
+            <el-button class="register_btn" @click="registerForm" style="margin-left:24px;">注册</el-button>
           </el-form-item>
         </el-form>
       </el-tab-pane>
       <el-tab-pane label="扫码登录" name="CodeLogin">
-          <QrCodeLogin></QrCodeLogin>
+        <QrCodeLogin></QrCodeLogin>
       </el-tab-pane>
     </el-tabs>
     <div class="third_party_login">
@@ -84,21 +77,21 @@
 </template>
 
 <script>
-import QrCodeLogin from "./QrCodeLogin"
+import QrCodeLogin from "./QrCodeLogin";
 export default {
   name: "fill",
   data() {
     return {
       activeName: "ToLogin",
       numberValidateForm: {
-        age: "",
-        age1: ""
+        username: "",
+        password: ""
       },
       checked: true
     };
   },
   components: {
-      QrCodeLogin
+    QrCodeLogin
   },
   methods: {
     handleClick(tab, event) {
@@ -115,7 +108,7 @@ export default {
       });
     },
     registerForm() {
-      this.$router.push('register')
+      this.$router.push("register");
     }
   }
 };
