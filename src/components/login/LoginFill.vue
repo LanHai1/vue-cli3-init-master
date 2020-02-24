@@ -110,7 +110,7 @@ export default {
 };
 </script>
 
-<style scoped lang="scss">
+<style lang="scss" scoped>
 @import "@/assets/css/reset_el/reset_el.scss";
 .login_fill {
   .login_title_1 {

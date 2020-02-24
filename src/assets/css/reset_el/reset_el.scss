@@ -133,21 +133,13 @@
         width: 367px;
     }
 
-    .el-form>>> {
+    .el-form /deep/ {
         .el-form-item__label {
             text-align-last: justify;
             font-size: 16px;
             font-weight: normal;
             color: rgba(1, 7, 20, 1);
         }
-
-        .register_foot {
-            .el-form-item__content {
-                margin-left: 0 !important;
-                margin-top: 17px;
-            }
-        }
-
 
         .el-input__inner {
             width: 280px;

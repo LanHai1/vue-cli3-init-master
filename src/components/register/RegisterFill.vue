@@ -42,10 +42,10 @@
       </el-form-item>
       <el-row class="chk_inner">
         <el-col :span="24">
-            <el-checkbox v-model="checked">我已阅读并接受以下条款：</el-checkbox>
+          <el-checkbox v-model="checked">我已阅读并接受以下条款：</el-checkbox>
         </el-col>
       </el-row>
-      <el-row >
+      <el-row>
         <el-col :span="24" class="contract">
           <el-link>《银狐商业产品注册协议》</el-link>
           <el-link>《银狐推广服务合同》</el-link>
@@ -150,5 +150,12 @@ export default {
     color: #fe9818;
     margin: 4px 0 12px;
   }
+  .register_foot {
+    /deep/.el-form-item__content {
+      margin-left: 0 !important;
+      margin-top: 17px;
+    }
+  }
 }
+
 </style>
