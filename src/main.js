@@ -1,11 +1,18 @@
 import Vue from 'vue'
 import App from './App.vue'
-import { router } from './router/index'
+import {
+  router
+} from './router/index'
 import store from './store/index'
 import $ from 'jquery'
+import ElementUI from 'element-ui';
+import 'element-ui/lib/theme-chalk/index.css';
 import "amfe-flexible" // 引入flexible
 //设置为 false 以阻止 vue 在启动时生成生产提示
-Vue.config.productionTip = false
+Vue.config.productionTip = false;
+
+Vue.use(ElementUI);
+
 new Vue({
   router,
   store,
