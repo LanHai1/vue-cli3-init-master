@@ -6,7 +6,7 @@
         <li></li>
         <li></li>
       </ul>
-      <router-view name="login_view" class="login_fill_box"/>
+      <router-view name="login_view" class="login_fill_box" />
     </div>
     <div class="curr_right">
       <img src="../../assets/img/login/login_img@2x.png" width="497px" alt />
@@ -20,7 +20,14 @@ export default {
   data() {
     return {};
   },
-  components: {
+  components: {},
+  created() {
+    this.$axios({
+      method: "get",
+      url: "/mock/test"
+    }).then(response => {
+      console.log(response, "success111");
+    });
   }
 };
 </script>
@@ -72,7 +79,7 @@ export default {
     flex: 1;
     position: relative;
     img {
-      @include vertical_center(50%,50%);
+      @include vertical_center(50%, 50%);
     }
   }
 }

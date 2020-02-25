@@ -46,6 +46,7 @@ module.exports = {
       .set('static', resolve('src/static'))
       .set('store', resolve('src/store'))
       .set('views', resolve('src/views'))
+      .set('api', resolve('src/api'))
   },
   css: {
     loaderOptions: {
