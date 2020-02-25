@@ -43,7 +43,6 @@ export default {
       height: 100%;
       position: absolute;
       left: 27px;
-      top: 2px;
       li {
         width: 100%;
         height: 31.25%;

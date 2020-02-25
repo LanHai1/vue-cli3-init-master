@@ -157,5 +157,4 @@ export default {
     }
   }
 }
-
 </style>
