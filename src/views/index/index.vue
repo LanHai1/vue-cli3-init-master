@@ -1,4 +1,5 @@
 <template>
+  <!-- 测试页面 勿删 -->
   <div class="com">
     <h1 class="com-item">首页</h1>
   </div>

@@ -45,10 +45,10 @@
           </div>
           <el-row class="chk_inner">
             <el-col :span="12">
-                <el-checkbox v-model="checked">记住密码</el-checkbox>
+              <el-checkbox v-model="checked">记住密码</el-checkbox>
             </el-col>
             <el-col :span="12">
-                <el-link :underline="false">忘记密码?</el-link>
+              <el-link :underline="false">忘记密码?</el-link>
             </el-col>
           </el-row>
           <el-form-item>
@@ -80,8 +80,8 @@ export default {
     return {
       activeName: "ToLogin",
       numberValidateForm: {
-        username: "",
-        password: ""
+        username: "admin",
+        password: "123456"
       },
       checked: true
     };
@@ -96,7 +96,8 @@ export default {
     submitForm(formName) {
       this.$refs[formName].validate(valid => {
         if (valid) {
-          alert("submit!");
+          // 登陆成功
+          this.$router.push("/main");
         } else {
           console.log("error submit!!");
           return false;

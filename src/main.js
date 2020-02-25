@@ -1,8 +1,10 @@
 import Vue from 'vue'
 import App from './App.vue'
-import { router } from './router/index'
+import router from './router/index.js'
 import store from './store/index'
 import $ from 'jquery'
+import '@/utils/global' //全局
+import './promission' //这里进行路由后台获取的模拟
 import ElementUI from 'element-ui';
 import 'element-ui/lib/theme-chalk/index.css';
 import "amfe-flexible" // 引入flexible
