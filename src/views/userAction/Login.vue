@@ -22,12 +22,13 @@ export default {
   },
   components: {},
   created() {
-    this.$axios({
-      method: "get",
-      url: "/mock/test"
-    }).then(response => {
-      console.log(response, "success111");
-    });
+    // this.$axios({
+    //   method: "get",
+    //   url: "/mock/test",
+    //   params: { name: "蓝海", password: "123456" }
+    // }).then(response => {
+    //   console.log(response, "success111");
+    // });
   }
 };
 </script>

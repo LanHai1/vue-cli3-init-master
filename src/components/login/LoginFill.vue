@@ -96,8 +96,23 @@ export default {
     submitForm(formName) {
       this.$refs[formName].validate(valid => {
         if (valid) {
-          // 登陆成功
-          this.$router.push("/main");
+          let { username, password } = this.numberValidateForm;
+          this.$axios({
+            method: "get",
+            url: "/mock/login",
+            params: { username, password }
+          }).then(response => {
+            console.log(response, "success222");
+            if (response.data.code == 200) {
+              // 登陆成功
+             return this.$router.push("/main");
+            }
+            // 登陆失败
+            this.$notify.error({
+              title: "错误",
+              message: response.data.msg
+            });
+          });
         } else {
           console.log("error submit!!");
           return false;

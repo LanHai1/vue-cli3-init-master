@@ -1,7 +1,7 @@
 <template>
   <div class="menu-wrapper">
     <template v-for="(item,index) in routes">
-      <div v-if="!item.hidden&&item.children" :key="index" style="display: inline-block;">
+      <div v-if="!item.hidden&&item.children" :key="index">
         <router-link
           v-if="item.children.length===1 && !item.children[0].children && !item.alwaysShow"
           :to="item.path+'/'+item.children[0].path"
@@ -27,7 +27,7 @@
           </template>
 
           <template v-for="(child,index) in item.children">
-            <div v-if="!child.hidden" :key="index" style="display: inline-block;">
+            <div v-if="!child.hidden" :key="index">
               <sidebar-item
                 :is-nest="true"
                 class="nest-menu"

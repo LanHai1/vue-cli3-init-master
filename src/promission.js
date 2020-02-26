@@ -2,6 +2,10 @@ import router from './router/index.js'
 const _import = require('./router/_import_' + process.env.NODE_ENV) //获取组件的方法
 import Layout from '@/views/layout' //Layout 是架构组件，不在后台返回，在文件里单独引入
 
+import {
+  setLocalStorage,
+  getLocalStorage
+} from "utils/auth"
 
 var getRouter //用来获取后台拿到的路由
 
@@ -37,21 +41,20 @@ let fakeRouter = {
 router.beforeEach((to, from, next) => {
   console.log(getRouter)
   if (!getRouter) { //不加这个判断，路由会陷入死循环
-    if (!getObjArr('router')) {
+    if (!getLocalStorage('router')) {
       // axios.get('xxxx').then(res => {
       console.log('beforeEach  getRouter')
       getRouter = fakeRouter.router //假装模拟后台请求得到的路由数据
-      saveObjArr('router', getRouter) //存储路由到localStorage
+      setLocalStorage('router', getRouter) //存储路由到localStorage
 
       routerGo(to, next) //执行路由跳转方法
       // })
     } else { //从localStorage拿到了路由
-      getRouter = getObjArr('router') //拿到路由
+      getRouter = getLocalStorage('router') //拿到路由
       console.log(getRouter)
       routerGo(to, next)
     }
   } else {
-    console.log(22222)
     next()
   }
 
@@ -71,15 +74,6 @@ function routerGo(to, next) {
     ...to,
     replace: true
   })
-}
-
-function saveObjArr(name, data) { //localStorage 存储数组对象的方法
-  localStorage.setItem(name, JSON.stringify(data))
-}
-
-function getObjArr(name) { //localStorage 获取数组对象的方法
-  return JSON.parse(window.localStorage.getItem(name));
-
 }
 
 function filterAsyncRouter(asyncRouterMap) { //遍历后台传来的路由字符串，转换为组件对象
