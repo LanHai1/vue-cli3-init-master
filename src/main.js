@@ -11,6 +11,13 @@ import ElementUI from 'element-ui';
 import 'element-ui/lib/theme-chalk/index.css';
 import "amfe-flexible" // 引入flexible
 
+// svg
+import 'assets/icon/iconfont.js'
+import IconSvg from 'components/iconFont/index.vue'
+//全局注册icon-svg
+Vue.component('icon-svg', IconSvg)
+
+
 import axios from 'axios';
 Vue.prototype.$axios = axios;
 
