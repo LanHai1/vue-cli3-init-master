@@ -4,7 +4,8 @@
     .main-container {
         min-height: 100%;
         transition: margin-left 0.28s;
-        margin-left: 180px;
+        flex: 1;
+        @include flex_up_down_layout;
     }
 
     // 侧边栏
@@ -12,10 +13,6 @@
         transition: width 0.28s;
         width: 180px !important;
         height: 100%;
-        position: fixed;
-        top: 0;
-        bottom: 0;
-        left: 0;
         z-index: 1001;
 
         a {
@@ -38,7 +35,6 @@
         .sidebar-container,
         .sidebar-container .el-menu {
             width: 36px !important;
-            // overflow: inherit;
         }
 
         .main-container {

@@ -35,6 +35,34 @@ let fakeRouter = {
         "icon": "el-icon-refrigerator"
       }
     }]
+  }, {
+    "path": "/example",
+    "component": "Layout",
+    "redirect": "/example/table",
+    "name": "Example",
+    "meta": {
+      "title": "案例",
+      "icon": "el-icon-grape"
+    },
+    "children": [{
+        "path": "table",
+        "name": "Table",
+        "component": "homePage/index",
+        "meta": {
+          "title": "表格",
+          "icon": "el-icon-watermelon"
+        }
+      },
+      {
+        "path": "tree",
+        "name": "Tree",
+        "component": "homePage/index",
+        "meta": {
+          "title": "树形菜单",
+          "icon": "el-icon-cherry"
+        }
+      }
+    ]
   }]
 
 }
@@ -62,11 +90,12 @@ router.beforeEach((to, from, next) => {
 
 function routerGo(to, next) {
   getRouter = filterAsyncRouter(getRouter) //过滤路由
+  //404页面最后添加
   const unFound = {
     path: '*',
     redirect: '/404',
     hidden: true
-  } //404页面最后添加
+  } 
   getRouter.push(unFound)
   router.addRoutes(getRouter) //动态添加路由
   global.antRouter = getRouter //将路由数据传递给全局变量，做侧边栏菜单渲染工作
@@ -76,7 +105,10 @@ function routerGo(to, next) {
   })
 }
 
-function filterAsyncRouter(asyncRouterMap) { //遍历后台传来的路由字符串，转换为组件对象
+/**
+ * 遍历后台传来的路由字符串，转换为组件对象
+ */
+function filterAsyncRouter(asyncRouterMap) {
   const accessedRouters = asyncRouterMap.filter(route => {
     if (route.component) {
       if (route.component === 'Layout') { //Layout组件特殊处理

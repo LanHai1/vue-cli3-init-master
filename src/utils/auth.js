@@ -11,7 +11,7 @@ export function setLocalStorage (key, value) {
 * 获取getLocalStorage
 * */
 export function getLocalStorage (key) {
-    return window.JSON.parse(window.localStorage.getItem(key) || '[]')
+    return window.JSON.parse(window.localStorage.getItem(key))
 }
 /*
 * 设置setSessionStorage

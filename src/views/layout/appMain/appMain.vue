@@ -14,6 +14,6 @@ export default {
 
 <style scoped>
 .app-main {
-  min-height: 100%;
+  flex: 1;
 }
 </style>

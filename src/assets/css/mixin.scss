@@ -39,3 +39,16 @@
   top: $top;
   transform: translate(-50%, -50%);
 }
+
+// flex 垂直居中
+@mixin flex_vertical_center() {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+// flex 上下布局
+@mixin flex_up_down_layout() {
+  display: flex;
+  flex-direction: column;
+}

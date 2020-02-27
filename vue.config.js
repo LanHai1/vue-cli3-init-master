@@ -1,7 +1,7 @@
 const path = require('path');
 const webpack = require('webpack');
 
-function resolve(dir) {
+let resolve = (dir) => {
   return path.join(__dirname, './', dir)
 }
 
@@ -28,11 +28,12 @@ module.exports = {
   },
   configureWebpack: {
     plugins: [
+      // 全局配置jquery
       new webpack.ProvidePlugin({
         $: "jquery",
         jQuery: "jquery",
         "windows.jQuery": "jquery"
-      }), new webpack.HotModuleReplacementPlugin()
+      })
     ]
   },
   // 配置别名
