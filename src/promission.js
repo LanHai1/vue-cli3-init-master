@@ -20,7 +20,7 @@ let fakeRouter = {
       "component": "homePage/index",
       "meta": {
         "title": "首页",
-        "icon": "sousuo"
+        "icon": "shouye"
       }
     }]
   }, {
@@ -31,8 +31,8 @@ let fakeRouter = {
       "path": "dashboard1",
       "component": "homePage/index",
       "meta": {
-        "title": "首页",
-        "icon": "chelun"
+        "title": "测试",
+        "icon": "mingxinghuodong"
       }
     }]
   }, {
@@ -42,15 +42,15 @@ let fakeRouter = {
     "name": "Example",
     "meta": {
       "title": "组件",
-      "icon": "zhengquequeding"
+      "icon": "fuzhi"
     },
     "children": [{
         "path": "icon",
         "name": "Icon",
         "component": "icon/index",
         "meta": {
-          "title": "icon图库",
-          "icon": "chelianwang"
+          "title": "iconfont",
+          "icon": "weixuanzhong"
         }
       },
       {
@@ -59,7 +59,7 @@ let fakeRouter = {
         "component": "homePage/index",
         "meta": {
           "title": "树形菜单",
-          "icon": "wode"
+          "icon": "guanzhu"
         }
       }
     ]

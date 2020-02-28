@@ -104,15 +104,19 @@
 
     .nest-menu .el-submenu>.el-submenu__title,
     .el-submenu .el-menu-item {
-        min-width: 180px !important;
-        background-color: $subMenuBg !important;
+        min-width: 180px;
+        background-color: $subMenuBg;
 
         &:hover {
-            background-color: $menuHover !important;
+            background-color: $menuHover;
         }
     }
 
+    .el-menu-item.is-active {
+        background-color: #273749 !important;
+    }
+
     .el-menu--collapse .el-menu .el-submenu {
-        min-width: 180px !important;
+        min-width: 180px;
     }
 }
