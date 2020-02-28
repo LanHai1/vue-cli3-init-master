@@ -15,6 +15,10 @@ let fakeRouter = {
     "path": "",
     "component": "Layout",
     "redirect": "dashboard",
+    "meta": {
+      "title": "首页",
+      "icon": "shouye"
+    },
     "children": [{
       "path": "dashboard",
       "component": "homePage/index",
@@ -27,6 +31,10 @@ let fakeRouter = {
     "path": "/a",
     "component": "Layout",
     "redirect": "dashboard1",
+    "meta": {
+      "title": "测试",
+      "icon": "mingxinghuodong"
+    },
     "children": [{
       "path": "dashboard1",
       "component": "homePage/index",
@@ -56,7 +64,7 @@ let fakeRouter = {
       {
         "path": "tree",
         "name": "Tree",
-        "component": "homePage/index",
+        "component": "tree/index",
         "meta": {
           "title": "树形菜单",
           "icon": "guanzhu"
@@ -74,7 +82,6 @@ router.beforeEach((to, from, next) => {
       console.log('beforeEach  getRouter')
       getRouter = fakeRouter.router //假装模拟后台请求得到的路由数据
       setLocalStorage('router', getRouter) //存储路由到localStorage
-
       routerGo(to, next) //执行路由跳转方法
       // })
     } else { //从localStorage拿到了路由

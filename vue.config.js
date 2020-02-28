@@ -59,6 +59,7 @@ module.exports = {
                @import "@/assets/css/variable.scss"; 
                @import "@/assets/css/common.scss";
                @import "@/assets/css/mixin.scss";
+               @import "@/assets/css/transition.scss";
               `
       }
     }
