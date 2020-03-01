@@ -35,6 +35,7 @@ export default {
     /deep/ .header {
       height: 40px;
       background-color: red;
+      display: grid;
     }
   }
 }

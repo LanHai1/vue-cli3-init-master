@@ -15,11 +15,13 @@ let fakeRouter = {
     "path": "",
     "component": "Layout",
     "redirect": "dashboard",
+    "id":"1",
     "meta": {
       "title": "首页",
       "icon": "shouye"
     },
     "children": [{
+      "id": "1",
       "path": "dashboard",
       "component": "homePage/index",
       "meta": {
@@ -31,6 +33,7 @@ let fakeRouter = {
     "path": "/a",
     "component": "Layout",
     "redirect": "dashboard1",
+    "id": "2",
     "meta": {
       "title": "测试",
       "icon": "mingxinghuodong"
@@ -38,6 +41,7 @@ let fakeRouter = {
     "children": [{
       "path": "dashboard1",
       "component": "homePage/index",
+      "id": "2",
       "meta": {
         "title": "测试",
         "icon": "mingxinghuodong"
@@ -48,6 +52,7 @@ let fakeRouter = {
     "component": "Layout",
     "redirect": "/example/icon",
     "name": "Example",
+    "id": "3",
     "meta": {
       "title": "组件",
       "icon": "fuzhi"
@@ -56,6 +61,7 @@ let fakeRouter = {
         "path": "icon",
         "name": "Icon",
         "component": "icon/index",
+        "id": "4",
         "meta": {
           "title": "iconfont",
           "icon": "weixuanzhong"
@@ -65,6 +71,7 @@ let fakeRouter = {
         "path": "tree",
         "name": "Tree",
         "component": "tree/index",
+        "id": "5",
         "meta": {
           "title": "树形菜单",
           "icon": "guanzhu"

@@ -1,8 +1,22 @@
 <template>
   <div>
-    <el-tree :data="data" node-key="id" default-expand-all :expand-on-click-node="false">
+    <el-tree
+      :data="data"
+      node-key="id"
+      default-expand-all
+      show-checkbox
+      draggable
+      ref="tree"
+      :expand-on-click-node="false"
+      :default-checked-keys="['1-1']"
+      @node-drag-enter="handleDragEnter"
+      @check="checked"
+    >
       <span class="custom-tree-node" slot-scope="{ node, data }">
-        <span><icon-svg :icon-class='data.meta.icon.replace(/\"/g, "")' />{{ data.meta.title }}</span>
+        <span>
+          <icon-svg :icon-class='data.meta.icon.replace(/\"/g, "")' class="icon_location" />
+          {{ data.meta.title }}
+        </span>
         <span>
           <el-button type="text" size="mini" @click="() => append(data)">Append</el-button>
           <el-button type="text" size="mini" @click="() => update(data)">Update</el-button>
@@ -22,6 +36,7 @@ let fakeRouter = {
       path: "",
       component: "Layout",
       redirect: "dashboard",
+      id: "1",
       meta: {
         title: "首页",
         icon: "shouye"
@@ -30,6 +45,7 @@ let fakeRouter = {
         {
           path: "dashboard",
           component: "homePage/index",
+          id: "1-1",
           meta: {
             title: "首页",
             icon: "shouye"
@@ -41,6 +57,7 @@ let fakeRouter = {
       path: "/a",
       component: "Layout",
       redirect: "dashboard1",
+      id: "2",
       meta: {
         title: "测试",
         icon: "mingxinghuodong"
@@ -49,6 +66,7 @@ let fakeRouter = {
         {
           path: "dashboard1",
           component: "homePage/index",
+          id: "2-1",
           meta: {
             title: "测试",
             icon: "mingxinghuodong"
@@ -61,6 +79,7 @@ let fakeRouter = {
       component: "Layout",
       redirect: "/example/icon",
       name: "Example",
+      id: "3",
       meta: {
         title: "组件",
         icon: "fuzhi"
@@ -70,6 +89,7 @@ let fakeRouter = {
           path: "icon",
           name: "Icon",
           component: "icon/index",
+          id: "3-1",
           meta: {
             title: "iconfont",
             icon: "weixuanzhong"
@@ -79,6 +99,7 @@ let fakeRouter = {
           path: "tree",
           name: "Tree",
           component: "tree/index",
+          id: "3-2",
           meta: {
             title: "树形菜单",
             icon: "guanzhu"
@@ -92,7 +113,7 @@ let fakeRouter = {
 export default {
   name: "tree",
   data() {
-    const data = [
+    let data = [
       {
         id: 1,
         label: "一级 1",
@@ -164,12 +185,20 @@ export default {
     },
     update(data) {
       console.log(data);
+    },
+    handleDragEnter(draggingNode, dropNode, ev) {
+      console.log("tree drag enter: ", dropNode.label, ev);
+    },
+    checked(v){
+        console.log(v)
+        console.log(this.$refs.tree.getCheckedKeys(false))
+        console.log(this.$refs.tree.getCheckedNodes())
     }
   }
 };
 </script>
 
-<style>
+<style lang="scss" scoped>
 .custom-tree-node {
   flex: 1;
   display: flex;
@@ -177,5 +206,9 @@ export default {
   justify-content: space-between;
   font-size: 14px;
   padding-right: 8px;
+  .icon_location {
+    position: relative;
+    top: 4px;
+  }
 }
 </style>
