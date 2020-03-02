@@ -63,8 +63,7 @@ let fakeRouter = {
         "component": "icon/index",
         "id": "4",
         "meta": {
-          "title": "iconfont",
-          "icon": "weixuanzhong"
+          "title": "iconfont"
         }
       },
       {
@@ -73,8 +72,7 @@ let fakeRouter = {
         "component": "tree/index",
         "id": "5",
         "meta": {
-          "title": "树形菜单",
-          "icon": "guanzhu"
+          "title": "树形菜单"
         }
       }
     ]
