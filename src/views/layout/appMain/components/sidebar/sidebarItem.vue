@@ -12,7 +12,7 @@
             :class="{'submenu-title-noDropdown':!isNest}"
           >
             <!-- <i :class="item.children[0].meta.icon"></i> -->
-            <icon-svg :icon-class='item.children[0].meta.icon.replace(/\"/g, "")' />
+            <icon-svg v-if="item.children[0].meta&&item.children[0].meta.icon" :icon-class='item.children[0].meta.icon.replace(/\"/g, "")' />
             <span
               v-if="item.children[0].meta&&item.children[0].meta.title"
             >{{item.children[0].meta.title}}</span>
@@ -23,7 +23,7 @@
           <template slot="title">
             <!-- <i :class="item.meta.icon"></i> -->
             <!-- 清除双引号 -->
-            <icon-svg :icon-class='item.meta.icon.replace(/\"/g, "")' />
+            <icon-svg v-if="item.meta&&item.meta.icon" :icon-class='item.meta.icon.replace(/\"/g, "")' />
             <span v-if="item.meta&&item.meta.title">{{item.meta.title}}</span>
           </template>
 
@@ -40,7 +40,8 @@
               <router-link v-else :to="item.path+'/'+child.path" :key="child.name">
                 <el-menu-item :index="item.path+'/'+child.path">
                   <!-- <i :class="child.meta.icon"></i> -->
-                  <icon-svg :icon-class='child.meta.icon.replace(/\"/g, "")' />
+                  <icon-svg v-if="child.meta&&child.meta.icon" :icon-class='child.meta.icon.replace(/\"/g, "")' />
+                  <!-- {{child.meta.icon}} -->
                   <span v-if="child.meta&&child.meta.title">{{child.meta.title}}</span>
                 </el-menu-item>
               </router-link>

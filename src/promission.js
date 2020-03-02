@@ -81,6 +81,7 @@ let fakeRouter = {
   }]
 
 }
+
 router.beforeEach((to, from, next) => {
   console.log(getRouter)
   if (!getRouter) { //不加这个判断，路由会陷入死循环
