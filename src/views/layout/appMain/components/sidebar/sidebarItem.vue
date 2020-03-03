@@ -1,7 +1,7 @@
 <template>
   <div class="sidebar_wrap">
     <logoTopbar></logoTopbar>
-    <el-scrollbar class="menu-wrapper">
+    <el-scrollbar class="menu-wrapper" :native="false">
       <template v-for="(item,index) in routes">
         <div v-if="!item.hidden&&item.children" :key="index">
           <router-link
@@ -53,7 +53,10 @@
                       :icon-class="child.meta.icon | GetOfString"
                     />
                     <!-- {{child.meta.icon}} -->
-                    <span v-if="child.meta&&child.meta.title">{{child.meta.title}}</span>
+                    <span
+                      v-if="child.meta&&child.meta.title"
+                      :class="{'secondaryMenu':!child.meta.icon}"
+                    >{{child.meta.title}}</span>
                   </el-menu-item>
                 </router-link>
               </div>
@@ -81,9 +84,9 @@ export default {
   components: {
     logoTopbar
   },
-  filters:{
-    GetOfString(value){
-      if (!value) return '';
+  filters: {
+    GetOfString(value) {
+      if (!value) return "";
       return value.replace(/"/g, "");
     }
   }

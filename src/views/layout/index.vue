@@ -3,7 +3,7 @@
     <main class="main">
       <sidebar class="sidebar-container"></sidebar>
       <div class="main-container">
-        <div class="header">1</div>
+        <headerbar></headerbar>
         <app-main></app-main>
       </div>
     </main>
@@ -12,12 +12,14 @@
 <script>
 import AppMain from "@/views/layout/appMain/appMain"; //页面布局的右侧区域
 import sidebar from "@/views/layout/appMain/components/sidebar"; //页面布局的左侧菜单
+import headerbar from "@/views/layout/appMain/components/header"; //页面布局的顶部区域
 
 export default {
   name: "layout",
   components: {
     sidebar,
-    AppMain
+    AppMain,
+    headerbar
   }
 };
 </script>
@@ -27,6 +29,7 @@ export default {
   position: relative;
   height: 100%;
   width: 100%;
+  background: linear-gradient(to bottom, #fff, #F5F6F9);
   .main {
     width: 100%;
     height: 100%;
