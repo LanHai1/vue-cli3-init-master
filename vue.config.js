@@ -60,6 +60,7 @@ module.exports = {
                @import "@/assets/css/common.scss";
                @import "@/assets/css/mixin.scss";
                @import "@/assets/css/transition.scss";
+                @import "@/assets/css/media/media.scss";
               `
       }
     }
