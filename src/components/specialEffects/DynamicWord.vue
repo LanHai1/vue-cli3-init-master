@@ -26,7 +26,6 @@ export default {
 </script>
 
 <style scoped lang="scss">
-@import url("https://fonts.googleapis.com/css?family=Baloo+Bhaijaan&display=swap");
 
 @function float-text-3d($shadow-color: #e86131, $depth: 10, $floating: false) {
   $shadows: ();

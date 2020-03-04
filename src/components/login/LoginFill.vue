@@ -52,7 +52,7 @@
             </el-col>
           </el-row>
           <el-form-item>
-            <el-button type="primary" class="login_btn" @click="submitForm('numberValidateForm')">登陆</el-button>
+            <el-button type="primary" class="login_btn" @click="submitForm('numberValidateForm')">登录</el-button>
             <el-button class="register_btn" @click="registerForm" style="margin-left:24px;">注册</el-button>
           </el-form-item>
         </el-form>
