@@ -28,6 +28,10 @@ let constantRouterMap = [{
     path: "/main",
     name: "main",
     component: Layout
+}, {
+    path: "/404",
+    name: "notFound",
+    component: () => import('@/views/notFound')
 }]
 
 // export const router = new Router({
