@@ -32,18 +32,18 @@ let fakeRouter = {
   }, {
     "path": "/a",
     "component": "Layout",
-    "redirect": "dashboard1",
+    "redirect": "bpmn",
     "id": "2",
     "meta": {
-      "title": "测试",
+      "title": "bpmn",
       "icon": "mingxinghuodong"
     },
     "children": [{
-      "path": "dashboard1",
-      "component": "homePage/index",
+      "path": "bpmn",
+      "component": "bpmn/showBpmn",
       "id": "2",
       "meta": {
-        "title": "测试",
+        "title": "bpmn",
         "icon": "mingxinghuodong"
       }
     }]

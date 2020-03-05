@@ -12,6 +12,10 @@
   "dependencies": {
     "amfe-flexible": "^2.2.1",
     "axios": "^0.18.1",
+    "bpmn-js": "^6.3.1",
+    "bpmn-js-properties-panel": "^0.33.1",
+    "bpmn-js-task-priorities": "^0.2.0",
+    "camunda-bpmn-moddle": "^4.4.0",
     "core-js": "^2.6.5",
     "element-ui": "^2.13.0",
     "jquery": "^3.4.1",
