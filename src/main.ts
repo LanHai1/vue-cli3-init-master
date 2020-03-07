@@ -10,6 +10,12 @@ import './promission' //这里进行路由后台获取的模拟
 import globals from '@/utils/global.ts' //全局
 Vue.prototype.$globals = globals;
 
+import VueRouter from 'vue-router';
+const routerPush: any = VueRouter.prototype.push
+VueRouter.prototype.push = function push(location: any) {
+  return routerPush.call(this, location).catch((error: any) => error)
+}
+
 // svg
 import 'assets/icon/iconfont.js'
 import IconSvg from 'components/iconFont/index.vue'
