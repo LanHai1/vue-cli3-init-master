@@ -1,0 +1,54 @@
+/* define mixin */
+
+/* flex
+ * @include flex(center, center);
+ */
+@mixin flex($justifyContent: flex-start, $alignItems: flex-start) {
+  display: flex;
+  align-items: $alignItems;
+  justify-content: $justifyContent;
+}
+
+/* ellipsis
+ * @include ellipsis;
+ */
+@mixin ellipsis {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+// 全屏
+@mixin full_screen {
+  position: fixed;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+}
+
+// 字体
+@mixin font_normal {
+  font-weight: normal;
+}
+
+// 垂直居中
+@mixin vertical_center($left, $top) {
+  position: absolute;
+  left: $left;
+  top: $top;
+  transform: translate(-50%, -50%);
+}
+
+// flex 垂直居中
+@mixin flex_vertical_center() {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+// flex 上下布局
+@mixin flex_up_down_layout() {
+  display: flex;
+  flex-direction: column;
+}
